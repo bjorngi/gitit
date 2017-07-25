@@ -99,6 +99,7 @@ a:visited {
 .repository .stats * {
     display: table-cell;
     vertical-align: text-bottom;
+    text-align: center;
 }
 
 .repository .stats > .stars {
