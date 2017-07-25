@@ -41,13 +41,13 @@ a:visited {
 .repository .header {
     display: flex;
     flex:none;
-    border-bottom-style: solid;
+    border-bottom-style: dotted;
     border-bottom-width: 2px;
     border-bottom-color: #009682;
 }
 
 .repository .header:hover {
-    font-size: 1.2em;
+    border-bottom-style: solid;
 }
 
 .repository .header .key-info {
