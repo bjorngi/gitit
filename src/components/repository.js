@@ -30,11 +30,10 @@ const Stats = ({stars, openIssues, forks}) => (
     </div>
     <div className='forks'>
       <ForkIcon height={32} width={32}/>
-      2323
+      {forks}
     </div>
     <div className='issues'>
-      <IssuesIcon height={32} widht={32} />
-      <span className='stat'>{openIssues}</span>
+      <IssuesIcon height={32} widht={32} /> {openIssues}
     </div>
   </div>
 )
@@ -56,7 +55,8 @@ const Repository = ({name, owner, description, stars, url, openIssues, forks}) =
     <div className="bottom">
       <Stats
           stars={stars}
-          openIssues={openIssues} />
+          openIssues={openIssues}
+          forks={forks} />
     </div>
   </div>
 )
