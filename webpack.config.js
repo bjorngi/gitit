@@ -25,6 +25,23 @@ var config = {
         loader: 'style-loader!css-loader'
       },
       {
+        test: /\.svg$/,
+        use: [
+          {
+            loader: 'babel-loader'
+          },
+          {
+            loader: 'react-svg-loader',
+            options: {
+              svgo: {
+                plugins: [{removeTitle: false}],
+                floatPrecision: 2
+              }
+            }
+          }
+        ]
+      },
+      {
         test: /\.js?$/,
         exclude: /node_modules/,
         loader: 'babel-loader'
@@ -36,13 +53,14 @@ var config = {
     alias: {
       components: path.resolve(APP_DIR, 'components'),
       assets: path.resolve(APP_DIR, 'assets'),
-      styles: path.resolve(APP_DIR, 'styles')
+      styles: path.resolve(APP_DIR, 'styles'),
+      icons: path.resolve(APP_DIR, 'assets/icons')
     }
   },
   plugins: [],
   devServer: {
-      historyApiFallback: true,
-      disableHostCheck: true
+    historyApiFallback: true,
+    disableHostCheck: true
   },
   devtool: 'source-map'
 };

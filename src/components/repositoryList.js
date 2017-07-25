@@ -32,7 +32,7 @@ class RepositoryList extends React.Component {
                  stars={repo.stargazers_count}
                  url={repo.html_url}
                  openIssues={repo.open_issues_count}
-
+                 forks={repo.forks_count}
              />
     })
   }

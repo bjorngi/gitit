@@ -3,6 +3,10 @@ import React from 'react'
 import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux'
 
+// Icons
+import NextArrow from 'icons/ic_keyboard_arrow_right_black_24px.svg'
+import PrevArrow from 'icons/ic_keyboard_arrow_left_black_24px.svg'
+
 // Paginator actions
 import {
   nextPage,
@@ -50,16 +54,15 @@ class Pagination extends React.Component {
     const paginationButtons = this.generatePaginationButtons()
     return (
       <div className='pagination'>
-
         <PaginationButton
-            symbol='&#9664;'
+            symbol={<PrevArrow height={32} width={32} />}
             onClick={this.props.previousPage}
         />
 
         {paginationButtons}
 
         <PaginationButton
-            symbol='&#9654;'
+            symbol={<NextArrow height={32} width={32} />}
             onClick={this.props.nextPage}
         />
       </div>
