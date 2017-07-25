@@ -1,7 +1,5 @@
 var webpack = require('webpack');
 var path = require('path');
-var precss = require('precss');
-var autoprefixer = require('autoprefixer');
 
 var BUILD_DIR_DEV = path.resolve(__dirname, 'public');
 var APP_DIR = path.resolve(__dirname, 'src');
@@ -18,34 +16,30 @@ var config = {
   },
   output:{
     path: BUILD_DIR_DEV,
-    filename: 'app.js'
+    filename: '[name].js'
   },
   module: {
     loaders: [
       {
         test:   /\.css$/,
-        loader: 'style!css!postcss'
+        loader: 'style-loader!css-loader'
       },
       {
         test: /\.js?$/,
         exclude: /node_modules/,
-        loader: 'babel'
+        loader: 'babel-loader'
       }
     ]
   },
   resolve: {
-    extensions: ['', '.js', '.jsx'],
+    extensions: ['.js', '.jsx'],
     alias: {
       components: path.resolve(APP_DIR, 'components'),
       assets: path.resolve(APP_DIR, 'assets'),
-      actions: path.resolve(APP_DIR, 'actions'),
-      api: path.resolve(APP_DIR, 'api'),
-      common: path.resolve(APP_DIR, 'common')
+      styles: path.resolve(APP_DIR, 'styles')
     }
   },
-  postcss: function() {
-    return [precss, autoprefixer];
-  },
+  plugins: [],
   devServer: {
       historyApiFallback: true,
       disableHostCheck: true

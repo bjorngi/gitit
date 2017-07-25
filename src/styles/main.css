@@ -1,0 +1,122 @@
+html {
+    background-color: #009682;
+    color: white;
+}
+
+a {
+    color: white;
+    text-decoration: none;
+}
+
+a:visited {
+    color: white;
+}
+
+.loading {
+    display: flex;
+    justify-content: center;
+    font-size: 2em;
+    align-self: center;
+    align-items: center;
+    min-height: 30rem;
+}
+
+.repositories {
+    display: flex;
+    flex-flow: row wrap;
+}
+
+.repository {
+    /* flex: 1 0 25%; */
+    display: flex;
+    flex-direction: column;
+    width: 25%;
+    box-sizing: border-box;
+    border-style: solid;
+    border-color: white;
+    border-width: 3px;
+    padding: 1em;
+    height: 15em;
+}
+
+.repository .header {
+    display: flex;
+    flex:none;
+}
+
+.repository .header:hover {
+    font-size: 1.2em;
+}
+
+.repository .header .key-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.repository .header .key-info > .user {
+}
+
+.repository .header .key-info > .name {
+    font-size: 1.3em;
+    font-weight: bolder;
+}
+
+.repository .description {
+    flex: auto;
+    flex-grow: 1;
+    max-height: 5em;
+    overflow: hidden;
+}
+
+
+.repository .gravatar {
+    margin: 0 0.5rem 0.5rem 0;
+    border-radius: 10%;
+    display: block;
+    max-height: 4em;
+    max-width: 4em;
+}
+
+.repository > .top {
+    flex-grow: 1;
+}
+
+.repository > .bottom {
+}
+
+
+.repository .stats {
+    display: flex;
+    margin-top: 1em;
+    font-size: 1.5em;
+    font-weight: bold;
+    justify-content: space-between;
+    min-height: 1em;
+}
+
+
+
+.pagination {
+    display: flex;
+    justify-content: center;
+}
+
+.pagination .button {
+    user-select: none;
+    cursor: pointer;
+    text-align: center;
+    width: 1em;
+    height: 1em;
+    margin: 0.3em;
+    border-style: solid;
+    border-radius: 5px;
+    border-width: 2px;
+    font-size: 2em;
+}
+
+.pagination .button.active {
+    background-color: white;
+    color: #009682
+}
+
